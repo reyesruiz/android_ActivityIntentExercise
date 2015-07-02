@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 
@@ -22,6 +24,14 @@ public class ReceiveMessageActivity extends Activity {
         messageView.setText(messageText);
     }
 
+    public void onSendForRealMessage(View view) {
+        TextView messageView = (TextView) findViewById(R.id.message);
+        String messageSend = messageView.getText().toString();
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_TEXT, messageSend);
+        startActivity(intent);
+    }
 
 
 

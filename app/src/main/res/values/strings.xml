@@ -6,5 +6,6 @@
     <string name="action_settings">Settings</string>
     <string name="send">SEND MESSAGE</string>
     <string name="title_activity_receive_message">ReceiveMessageActivity</string>
+    <string name="sendforreal">Send the message for real?</string>
 
 </resources>
