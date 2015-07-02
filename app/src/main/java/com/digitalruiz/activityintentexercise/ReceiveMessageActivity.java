@@ -3,10 +3,7 @@ package com.digitalruiz.activityintentexercise;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
 
 
@@ -30,7 +27,9 @@ public class ReceiveMessageActivity extends Activity {
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");
         intent.putExtra(Intent.EXTRA_TEXT, messageSend);
-        startActivity(intent);
+        String chooserTittle = getString(R.string.chooser);
+        Intent chosenIntent = Intent.createChooser(intent, chooserTittle);
+        startActivity(chosenIntent);
     }
 
 
